@@ -1,0 +1,43 @@
+# -------------------------------------------------------------------
+# cert-manager values
+# Chart version is pinned at install time (1.19.2)
+# -------------------------------------------------------------------
+
+crds:
+  enabled: true
+
+startupapicheck:
+  enabled: true
+
+extraArgs:
+  - --enable-gateway-api
+
+global:
+  leaderElection:
+    namespace: cert-manager
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 100m
+    memory: 128Mi
+
+webhook:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
+
+cainjector:
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 100m
+      memory: 128Mi
